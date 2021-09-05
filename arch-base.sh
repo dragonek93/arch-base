@@ -28,3 +28,5 @@ systemctl enable tlp
 #BOOTLOADER
 pacman -S grub efibootmgr os-prober dosfstools intel-ucode
 grub-install --target=x86_64-efi --bootloader-id=ARCH_LINUX --efi-directory=/boot/EFI --recheck
+echo "GRUB_DISABLE_OS_PROBER" >> /etc/default/grub
+grub-mkconfig -o /boot/grub/grub.cfg
